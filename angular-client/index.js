@@ -1,7 +1,7 @@
 angular.module('app', []);
-  // .controller(() => {
+// .controller(() => {
 
-  // }).component('app', {
-  //   database: '<',
-    
-  // });
+// }).component('app', {
+//   database: '<',
+
+// });

@@ -7,10 +7,11 @@ angular.module('app')
     // this.data = database;
     // use the quote method to render a message
     // then with that message use the search method to get a video from youtube
-    // itemsService.quote((message) => {
-    //   console.log(message);
-    //   return message;
-    // });
+    itemsService.quote((message) => {
+      console.log(itemsService.search(message));
+      return message;
+    });
+
     this.items = itemsService.search((item) => {
       console.log(item.data.items[0].id.videoId);
       return item.data.items[0].id.videoId;

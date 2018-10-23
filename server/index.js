@@ -24,7 +24,7 @@ app.get('/items', (req, res) => {
     }
   });
 });
-app.get('/api/activity/', (req, res) => {
+app.get('/search', (req, res) => {
   items.selectAll((err, data) => {
     if (err) {
       res.sendStatus(200);
@@ -33,7 +33,7 @@ app.get('/api/activity/', (req, res) => {
     }
   });
 });
-app.post('/api/activity/', (req, res) => {
+app.post('/search', (req, res) => {
   // these item should not be the req.body
   // should be the recent videos in a list
   const item = req.body;

@@ -5,7 +5,7 @@ angular.module('app')
         params: {
           key: 'AIzaSyCJvLw2sXxAGtzSsyKtfLVBjKFXGVqVKc4',
           type: 'video',
-          maxResults: '1',
+          maxResults: '5',
           q: 'hello',
           part: 'snippet',
         },
@@ -18,19 +18,32 @@ angular.module('app')
         });
     };
     this.quote = function (callback) {
-      return $http.get('http://boredapi.com/api/activity', {
-        type: 'text',
-        maxResults: '1',
-        q: 'world',
-        part: 'snippet',
+      return $http.get('https://www.boredapi.com/api/activity/', {
+        // type: 'text',
+        // maxResults: '1',
+        // q: 'world',
+        // part: 'snippet',
       }).then((quotes) => {
-        console.log('1', quotes);
-        callback(quotes);
+        console.log('1', quotes.data);
+        callback(quotes.data);
       })
         .catch((err) => {
           console.log(err);
         });
     };
+    // this.quote = function (callback) {
+    //   return $http.get('/database.js', {
+    //     type: 'text',
+    //     maxResults: '1',
+    //     q: 'world',
+    //     part: 'snippet',
+    //   }).then((message) => {
+    //     console.log(message);
+    //     callback(message);
+    //   }).catch((err) => {
+    //     console.log(err);
+    //   });
+    // };
     // console.log($http);
     // this.getAll = (callback) => {
     //   $http.get('/items')
