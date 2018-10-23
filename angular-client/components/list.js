@@ -4,7 +4,6 @@ angular.module('app')
       items: '<',
     },
     controller() {
-
     },
     templateUrl: '/templates/list.html',
   });
