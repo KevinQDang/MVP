@@ -16,26 +16,34 @@ app.use(express.static(path.join(__dirname, '/../angular-client')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
 console.log('hello');
 app.get('/items', (req, res) => {
-  // items.selectAll((err, data) => {
-  //   if (err) {
-  //     res.sendStatus(200);
-  //   } else {
-  //     res.json(data);
-  //   }
-  // });
+  items.selectAll((err, data) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
 });
-// app.get('/api/activity/', (req, res) => {
-//   items.selectAll((err, data) => {
-//     if (err) {
-//       res.sendStatus(200);
-//     } else {
-//       res.json(data);
-//     }
-//   });
-// });
-// app.post('/items', (req, res) => {
-//   console.log(req.body);
-// });
+app.get('/api/activity/', (req, res) => {
+  items.selectAll((err, data) => {
+    if (err) {
+      res.sendStatus(200);
+    } else {
+      res.json(data);
+    }
+  });
+});
+app.post('/api/activity/', (req, res) => {
+  // these item should not be the req.body
+  // should be the recent videos in a list
+  const item = req.body;
+  const queryStr = 'INSERT into items(id, quantity, description) values (?, ?, ?)';
+  // querystr is inserting data to the database table
+  items.query(queryStr, item, (err, results) => {
+    // should have a callback or promise here
+    console.log(err, results);
+  });
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('listening on port 3000!');

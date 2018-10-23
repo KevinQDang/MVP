@@ -1,9 +1,7 @@
 <div>
   <div>
     <list items="$ctrl.items"/>
-          <!-- <iframe id='player' width='640' height='390' src=`{https://www.youtube.com/embed/ + $ctrl.videoId}`
-          frameborder="0" allowFullScreen></iframe> -->
-            <iframe class="embed-responsive-item" ng-src="{'https://www.youtube.com/embed/' + $ctrl.videoId}" allowFullScreen></iframe>
+            <iframe class="embed-responsive-item" ng-src="{{'https://www.youtube.com/embed/'+ $ctrl.items}}" allowFullScreen></iframe>
 
   </div>
 </div>

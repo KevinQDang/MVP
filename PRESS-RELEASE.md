@@ -43,3 +43,6 @@ Once the project moves into development, the press release can be used as a touc
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
   'just try out the app and see were you go from there'
+  the client hits the button a video and an activity should show up
+  every time the button is pressed should save the recent video to the database
+  stop recent videos has a max of 10
