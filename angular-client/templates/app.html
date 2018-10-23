@@ -1,7 +1,11 @@
 <div>
   <div>
-    <iframe class="video" ng-src="https://www.youtube.com/embed/YQHsXMglC9A" allowFullScreen></iframe>
-    <list items="$ctrl.items"/>
+    <body ng-controller="AppCtrl">
 
+      {{$ctrl.items}}
+      <iframe class="video" ng-src="https://www.youtube.com/embed/YQHsXMglC9A" allowFullScreen></iframe>
+      <list items="$ctrl.items"/>
+      
+    </body>
   </div>
 </div>

@@ -7,18 +7,19 @@ angular.module('app')
     // this.data = database;
     // use the quote method to render a message
     // then with that message use the search method to get a video from youtube
+    this.items = null;
     itemsService.quote((message) => {
-      console.log(itemsService.search(message));
-      return message;
+      this.items = message;
+      //= message.activity;
+      console.log(this.items);
     });
 
-    this.items = itemsService.search((item) => {
-      console.log(item.data.items[0].id.videoId);
-      return item.data.items[0].id.videoId;
-    });
+    // itemsService.search((item) => {
+    //   console.log(item.data.items[0].id.videoId);
+    //   return item.data.items[0].id.videoId;
+    // });
   })
   .component('app', {
-    database: '@',
     bindings: {},
     controller: 'AppCtrl',
     templateUrl: '/templates/app.html',

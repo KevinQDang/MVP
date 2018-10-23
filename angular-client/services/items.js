@@ -1,12 +1,12 @@
 angular.module('app')
   .service('itemsService', function ($http) {
-    this.search = function (callback) {
+    this.search = function (callback, message) {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           key: 'AIzaSyCJvLw2sXxAGtzSsyKtfLVBjKFXGVqVKc4',
           type: 'video',
           maxResults: '5',
-          q: 'hello',
+          q: message,
           part: 'snippet',
         },
       }).then((data) => {
@@ -57,4 +57,36 @@ angular.module('app')
     //       console.log(err);
     //     });
     // };
+    // this.video = '';
+    // this.quote = function (callback) {
+    //   return $http.get('https://www.boredapi.com/api/activity/', {
+    //     // type: 'text',
+    //     // maxResults: '1',
+    //     // q: 'world',
+    //     // part: 'snippet',
+    //   }).then((quotes) => {
+    //     console.log('1', quotes.data);
+    //    this.video = quotes.data;
+    //     callback(quotes.data);
+    //   })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // }.then((callback) => {
+    //   return $http.get('https://www.googleapis.com/youtube/v3/search', {
+    //     params: {
+    //       key: 'AIzaSyCJvLw2sXxAGtzSsyKtfLVBjKFXGVqVKc4',
+    //       type: 'video',
+    //       maxResults: '5',
+    //       q: this.video,
+    //       part: 'snippet',
+    //     },
+    //   }).then((data) => {
+    //     console.log('1', data);
+    //     callback(data);
+    //   })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // });
   });
