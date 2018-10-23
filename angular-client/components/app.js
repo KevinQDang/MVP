@@ -3,23 +3,18 @@ angular.module('app')
     // itemsService.getAll((data) => {
     //   this.items = data;
     // });
-    this.videoId = '';
     // this.random = Math.floor(Math.random() * database.length);
-    this.data = database;
-    // itemsService.search('cat');
+    // this.data = database;
+    // use the quote method to render a message
+    // then with that message use the search method to get a video from youtube
+    // itemsService.quote((message) => {
+    //   console.log(message);
+    //   return message;
+    // });
     this.items = itemsService.search((item) => {
       console.log(item.data.items[0].id.videoId);
       return item.data.items[0].id.videoId;
     });
-    // itemsService.quote((show) => {
-    //   console.log(show);
-    //   return show;
-    // });
-    // console.log(data.data.items[0].id.videoId);
-    // return data.data.items[0].id.videoId;
-    // this.videoId = data.data.items[0].id.videoId;
-
-    console.log(this.videoId);
   })
   .component('app', {
     database: '@',

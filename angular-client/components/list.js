@@ -4,6 +4,9 @@ angular.module('app')
       items: '<',
     },
     controller() {
+      this.handleClick = () => {
+        // the handle click adds another video with a quote.
+      };
     },
     templateUrl: '/templates/list.html',
   });
