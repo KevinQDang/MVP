@@ -17,15 +17,15 @@ angular.module('app')
           console.log(err);
         });
     };
-    this.quote = function quote(callback) {
+    this.quote = function quote() {
       return $http.get('https://www.boredapi.com/api/activity/', {
         // type: 'text',
         // maxResults: '1',
         // q: 'world',
         // part: 'snippet',
       }).then((quotes) => {
-        console.log('1', quotes.data);
-        callback(quotes.data);
+        console.log('1', quotes.data.activity);
+        return quotes.data.activity;
       })
         .catch((err) => {
           console.log(err);

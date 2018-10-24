@@ -37,7 +37,7 @@ app.post('/api/activity', (req, res) => {
   // these item should not be the req.body
   // should be the recent videos in a list
   const item = req.body;
-  const queryStr = 'INSERT into items(id, quantity, description) values (?, ?, ?)';
+  const queryStr = 'INSERT into items(id, activity, description) values (?, ?, ?)';
   // querystr is inserting data to the database table
   items.query(queryStr, item, (err, results) => {
     // should have a callback or promise here

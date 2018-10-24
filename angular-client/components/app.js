@@ -3,21 +3,36 @@ angular.module('app')
     // itemsService.getAll((data) => {
     //   this.items = data;
     // });
-    // this.random = Math.floor(Math.random() * database.length);
-    // this.data = database;
     // use the quote method to render a message
     // then with that message use the search method to get a video from youtube
     const ctrl = this;
+    let newUrl = 'https://www.youtube.com/embed/';
     itemsService.quote((message) => {
       ctrl.items = message;
+      newUrl += ctrl.items;
       //= message.activity;
       console.log(message, 'mess');
     });
+    // need to use get and set 
+    this.videoId = itemsService.search((item) => {
+      console.log(item.data.items[0].id.videoId);
+      return item.data.items[0].id.videoId;
+    }, ctrl.items);
 
-    // itemsService.search((item) => {
-    //   console.log(item.data.items[0].id.videoId);
-    //   return item.data.items[0].id.videoId;
-    // });
+    this.print = function print() {
+      // itemsService.quote((message) => {
+      //   ctrl.items = message;
+      //   ctrl.newUrl += message.activty;
+      //   console.log('newUrl', ctrl.newUrl);
+      //   //= message.activity;
+      //   console.log(message, 'mess');
+      // });
+      itemsService.quote().then((result) => {
+        ctrl.newUrl += result.activty;
+        console.log('newUrl', ctrl.newUrl);
+        console.log('results', result);
+      });
+    };
   })
   .component('app', {
     bindings: {},
