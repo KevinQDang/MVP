@@ -1,6 +1,6 @@
 angular.module('app')
-  .service('itemsService', function ($http) {
-    this.search = function (callback, message) {
+  .service('itemsService', function itemsService($http) {
+    this.search = function search(callback, message) {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           key: 'AIzaSyCJvLw2sXxAGtzSsyKtfLVBjKFXGVqVKc4',
@@ -17,7 +17,7 @@ angular.module('app')
           console.log(err);
         });
     };
-    this.quote = function (callback) {
+    this.quote = function quote(callback) {
       return $http.get('https://www.boredapi.com/api/activity/', {
         // type: 'text',
         // maxResults: '1',

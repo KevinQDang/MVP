@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('AppCtrl', (itemsService) => {
+  .controller('AppCtrl', function AppCtrl(itemsService) {
     // itemsService.getAll((data) => {
     //   this.items = data;
     // });
@@ -7,11 +7,11 @@ angular.module('app')
     // this.data = database;
     // use the quote method to render a message
     // then with that message use the search method to get a video from youtube
-    this.items = null;
+    const ctrl = this;
     itemsService.quote((message) => {
-      this.items = message;
+      ctrl.items = message;
       //= message.activity;
-      console.log(this.items);
+      console.log(message, 'mess');
     });
 
     // itemsService.search((item) => {
