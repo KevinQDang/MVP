@@ -4,9 +4,9 @@
       <button ng-click="$ctrl.print()">TESTING</button>
 
       
-      {{$crtl.videoId}}
+      {{$crtl.items}}
       <iframe class="video" ng-src="https://www.youtube.com/embed/YQHsXMglC9A" allowFullScreen></iframe>
-      <!-- <iframe class="video" ng-src="{{'https://www.youtube.com/embed/' + $ctrl.videoId}}" allowfullscreen></iframe> -->
+      <!-- <iframe class="video" ng-src="{{$ctrl.newUrl}}" allowfullscreen></iframe> -->
       <list items="$ctrl.items"/>
     </body>
   </div>

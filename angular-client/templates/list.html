@@ -1,8 +1,9 @@
 <div class="list">
-  <h4> List Component </h4>
-  There are {{$ctrl.items.length}} items.
-  <button class="button" ng-click="$ctrl.handleClick()">Bored!!</button>
-  <list-item ng-repeat="item in $ctrl.items" item=item />
+  <h4> Recent </h4>
   
+  <!-- There are {{$ctrl.items.length}} items. -->
+  {{$ctrl.items}}
+  <button class="button" ng-click="$ctrl.handleClick()">Bored!!</button>
+  <!-- <list-item ng-repeat="item in $ctrl.items" item=item /> -->
   
 </div>

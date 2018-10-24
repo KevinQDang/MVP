@@ -6,15 +6,15 @@ angular.module('app')
     // use the quote method to render a message
     // then with that message use the search method to get a video from youtube
     const ctrl = this;
-    let newUrl = 'https://www.youtube.com/embed/';
-    itemsService.quote((message) => {
-      ctrl.items = message;
-      newUrl += ctrl.items;
-      //= message.activity;
-      console.log(message, 'mess');
+    ctrl.newUrl = 'https://www.youtube.com/embed/';
+    itemsService.quote().then((result) => {
+      ctrl.items = result;
+
+      console.log(ctrl.items, 'mess');
     });
+    
     // need to use get and set 
-    this.videoId = itemsService.search((item) => {
+    ctrl.newUrl += itemsService.search((item) => {
       console.log(item.data.items[0].id.videoId);
       return item.data.items[0].id.videoId;
     }, ctrl.items);

@@ -7,7 +7,7 @@ angular.module('app')
       this.handleClick = () => {
         // the handle click adds another video with a quote.
         console.log('clicked');
-        this.model.get(this.quote);
+        this.print();
       };
     },
     templateUrl: '/templates/list.html',
