@@ -3,7 +3,7 @@ angular.module('app')
     this.search = function search(callback, message) {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
-          key: 'AIzaSyCJvLw2sXxAGtzSsyKtfLVBjKFXGVqVKc4',
+          key: '',
           type: 'video',
           maxResults: '5',
           q: message,
