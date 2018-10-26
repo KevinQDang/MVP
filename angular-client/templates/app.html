@@ -1,13 +1,14 @@
 <div id="app">
   <div>
     <body ng-controller="AppCtrl">
-      <button ng-click="$ctrl.print()">TESTING</button>
+      
 
       
-      {{$crtl.items}}
-      <iframe class="video" ng-src="https://www.youtube.com/embed/YQHsXMglC9A" allowFullScreen></iframe>
-      <!-- <iframe class="video" ng-src="{{$ctrl.newUrl}}" allowfullscreen></iframe> -->
+      {{$crtl.newUrl}}
+      <!-- <iframe class="video" ng-src="https://www.youtube.com/embed/YQHsXMglC9A" allowFullScreen></iframe> -->
+      <iframe class="video" ng-src="https://www.youtube.com/embed/ + {{$ctrl.newUrl}}" allowfullscreen></iframe>
       <list items="$ctrl.items"/>
     </body>
   </div>
 </div>
+ <pre>{{$crtl | json}}</pre>

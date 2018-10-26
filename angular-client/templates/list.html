@@ -1,9 +1,10 @@
+<pre>{{$crtl | json}}</pre>
 <div class="list">
   <h4> Recent </h4>
-  
-  <!-- There are {{$ctrl.items.length}} items. -->
-  {{$ctrl.items}}
+  {{$crtl.newUrl}}
+  There are {{$ctrl.items.length}} items.
   <button class="button" ng-click="$ctrl.handleClick()">Bored!!</button>
-  <!-- <list-item ng-repeat="item in $ctrl.items" item=item /> -->
+  <list-item ng-repeat="item in $ctrl.items" item=item />
+  <iframe class="video" ng-src=`https://www.youtube.com/embed/ + {{$ctrl.newUrl}}` allowfullscreen></iframe>
   
 </div>
