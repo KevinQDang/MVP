@@ -5,6 +5,6 @@
   There are {{$ctrl.items.length}} items.
   <button class="button" ng-click="$ctrl.handleClick()">Bored!!</button>
   <list-item ng-repeat="item in $ctrl.items" item=item />
-  <iframe class="video" ng-src=`https://www.youtube.com/embed/ + {{$ctrl.newUrl}}` allowfullscreen></iframe>
+  <iframe class="video" ng-src="{{'https://www.youtube.com/embed/' + $ctrl.newUrl}}" allowfullscreen></iframe>
   
 </div>
